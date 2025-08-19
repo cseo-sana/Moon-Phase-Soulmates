@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Connect with Your Soulmate Using Moon Phase Insights</title>
+  <meta name="description" content="Discover how moon phase soulmates and lunar cycles influence compatibility, love, and relationship timing. Learn your lunar blueprint and match energy." />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b1020;
+      --bg-soft:#0d1328;
+      --card:#0f1733;
+      --text:#e6ecff;
+      --muted:#aab5d6;
+      --brand:#7c5cff;
+      --brand-2:#4ad4ff;
+      --ring: 0 0 0 4px rgba(124,92,255,.25);
+      --shadow: 0 10px 30px rgba(0,0,0,.35), 0 2px 10px rgba(124,92,255,.15);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+      background:
+        radial-gradient(1200px 700px at 85% -10%, rgba(124,92,255,.25), transparent 60%),
+        radial-gradient(900px 600px at 10% 0%, rgba(74,212,255,.18), transparent 50%),
+        linear-gradient(180deg, #0a0f22, #070b17 30%, #050813 100%);
+      color:var(--text);
+      line-height:1.7;
+      letter-spacing:.2px;
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px; margin:0 auto; padding:24px}
+    .shadow{box-shadow:var(--shadow)}
+    .glass{
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      backdrop-filter: blur(8px);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);
+    }
+    header.hero{
+      position:relative; overflow:hidden; border-radius:28px;
+      padding:56px 24px; margin-top:20px; background:
+        radial-gradient(1200px 600px at 95% 10%, rgba(124,92,255,.25), transparent 60%),
+        linear-gradient(180deg, #0e1640, #0a1130 60%, #0a0f26 100%);
+      box-shadow: var(--shadow);
+    }
+    .hero h1{
+      margin:0 0 10px; font-size: clamp(28px, 5vw, 44px); line-height:1.15; letter-spacing:.2px;
+    }
+    .hero p.lead{
+      margin:8px 0 24px; color:var(--muted); font-size: clamp(16px, 2.6vw, 18px);
+      max-width: 62ch;
+    }
+    .actions{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px; padding:12px 18px;
+      font-weight:600; border-radius:12px; border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, #7c5cff, #5f46ff 60%, #4a37ff);
+      color:white; text-decoration:none; box-shadow: var(--shadow); transform: translateZ(0);
+    }
+    .btn:hover{filter:brightness(1.05)}
+    .btn.secondary{
+      background:linear-gradient(180deg, #19224a, #131a3a 60%, #0f1630);
+      color:var(--text);
+    }
+    nav.toc{
+      margin:26px 0 8px; padding:18px; border-radius:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+    }
+    nav.toc strong{display:block; margin-bottom:8px}
+    nav.toc ul{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:6px 14px; margin:0; padding:0; list-style:none}
+    nav.toc a{color:var(--muted)}
+    section{margin:34px 0}
+    h2{
+      font-size: clamp(22px, 3.5vw, 30px);
+      line-height:1.2; margin:0 0 8px;
+    }
+    .eyebrow{
+      display:inline-block; font-weight:700; font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+      color:#c9d5ff; background:linear-gradient(180deg, rgba(124,92,255,.28), rgba(74,212,255,.18));
+      padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.18);
+      margin-bottom:10px;
+    }
+    .prose p{margin:12px 0; color:#d9e3ff}
+    .note{
+      border-left:3px solid var(--brand); padding:12px 14px; background:rgba(124,92,255,.08);
+      border-radius:10px; color:#e8ecff;
+    }
+    .grid{
+      display:grid; gap:16px;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    @media (min-width:680px){ .grid-2{grid-template-columns: repeat(2,1fr)} }
+    @media (min-width:920px){ .grid-3{grid-template-columns: repeat(3,1fr)} }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px; padding:18px; position:relative; overflow:hidden;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+    .card:hover{ transform: translateY(-3px); box-shadow: var(--shadow); border-color: rgba(124,92,255,.35) }
+    .chip{
+      display:inline-block; font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+      padding:4px 10px; border-radius:999px; color:#dfe6ff;
+      background:linear-gradient(180deg, rgba(74,212,255,.22), rgba(124,92,255,.22));
+      border:1px solid rgba(255,255,255,.16);
+      margin-bottom:10px;
+    }
+    .phase-title{margin:6px 0 6px; font-weight:800; font-size:18px}
+    .muted{color:var(--muted)}
+    .divider{height:1px; background:linear-gradient(90deg, rgba(255,255,255,.08), rgba(255,255,255,.04)); border:0; margin:22px 0}
+    .footer{
+      margin:40px 0 10px; padding:20px; border-radius:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:space-between;
+    }
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px; padding:3px 8px; border-radius:6px; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.05)}
+    /* Smooth scroll + focus ring */
+    html{scroll-behavior:smooth}
+    :target{scroll-margin-top:16px}
+    :focus-visible{outline: none; box-shadow: var(--ring)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>Connect with Your Soulmate Using Moon Phase Insights</h1>
+      <p class="lead">
+        Learn how lunar cycles shape emotional rhythms, compatibility, and the cosmic chemistry that makes relationships truly click.
+      </p>
+      <div class="actions">
+        <a class="btn" href="https://moonphasesoulmates.com/" target="_blank" rel="noopener">Try Free Moon Phase Test</a>
+        <a class="btn secondary" href="#moon-phase-secrets">Explore the 8 Phases</a>
+      </div>
+      <nav class="toc glass" aria-label="On this page">
+        <strong>Quick Navigation</strong>
+        <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#what-are-moon-phase-soulmates">What Are Moon Phase Soulmates?</a></li>
+          <li><a href="#compatibility">How Moon Phase Compatibility Works</a></li>
+          <li><a href="#find-your-phase">How to Find Your Moon Phase</a></li>
+          <li><a href="#moon-phase-secrets">8 Moon Phase Secrets</a></li>
+          <li><a href="#matching-phases">Do Matching Phases Mean Soulmates?</a></li>
+          <li><a href="#wedding-timing">Plan a Relationship or Wedding by the Moon?</a></li>
+          <li><a href="#start-now">Your Cosmic Love Journey Starts Now</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Introduction -->
+    <section id="introduction" class="prose">
+      <span class="eyebrow">Introduction</span>
+      <p>
+        Have you ever felt an instant connection with someone that seemed beyond explanation? Do you wonder why some relationships flow effortlessly while others feel like constant struggle?
+      </p>
+      <p>
+        Many people feel lost when it comes to understanding true compatibility. They jump from relationship to relationship, never finding that cosmic spark they desperately crave.
+      </p>
+      <p>
+        In this blog post, you'll discover the fascinating world of 
+        <a href="https://moonphasesoulmates.com/" target="_blank" rel="noopener">moon phase soulmates</a>. 
+        You'll learn how lunar cycles influence compatibility and what it means to be cosmically aligned with another person.
+      </p>
+      <p>Let's get started!</p>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- What Are Moon Phase Soulmates -->
+    <section id="what-are-moon-phase-soulmates" class="prose">
+      <span class="eyebrow">Foundations</span>
+      <h2>What Are Moon Phase Soulmates?</h2>
+      <p>
+        Moon phase soulmates are people born under complementary lunar cycles who share a deep cosmic connection. Your birth moon phase creates an energetic blueprint that influences how you love and connect. 
+      </p>
+      <p>
+        The moon phase present at your birth carries profound emotional significance. It shapes your intuitive nature and emotional responses throughout life. This celestial imprint becomes part of your soul's signature, influencing how you bond with others.
+      </p>
+      <p>
+        Each lunar phase holds a unique symbolic meaning that affects your personality. New moon babies tend to be fresh starters and visionaries. Full moon children often display intense emotions and strong intuition.
+      </p>
+      <p>
+        Your moon phase reveals your deepest needs in relationships. It shows how you give and receive love naturally. Understanding this lunar influence helps you recognize your perfect energetic match.
+      </p>
+    </section>
+
+    <section id="compatibility" class="prose">
+      <span class="eyebrow">Dynamics</span>
+      <h2>How Moon Phase Compatibility Works</h2>
+      <p>
+        Moon phase compatibility operates through three main connection types that create different relationship dynamics. You can experience matching phases, opposing phases, or sequential phases with potential partners. Each type brings its own unique energy and challenges to your connection.
+      </p>
+      <p>
+        Your emotional rhythm follows your birth moon phase like an internal cosmic clock. When you find someone whose lunar energy harmonizes with yours, you experience natural synchronicity. This symbolic alignment creates deep understanding that goes beyond surface-level attraction.
+      </p>
+    </section>
+
+    <section id="find-your-phase" class="prose">
+      <span class="eyebrow">Tools</span>
+      <h2>How to Find Your Moon Phase (And Your Partner's)</h2>
+      <p>
+        Finding your moon phase is easier than you might think with the right tools. You only need your exact birth date, time, and location to unlock this cosmic secret. Our specialized moon phase calculator tool makes this process simple and accurate.
+      </p>
+      <p class="note">
+        Ready to discover your lunar love match? Visit our free moon phase calculator and enter your birth details along with your partner's information. You'll receive detailed insights about your compatibility and cosmic connection instantly.
+      </p>
+      <div class="actions" style="margin-top:8px">
+        <a class="btn" href="https://moonphasesoulmates.com/" target="_blank" rel="noopener" aria-label="Open free moon phase calculator on Moon Phase Soulmates">Open Free Calculator</a>
+        <a class="btn secondary" href="#moon-phase-secrets">See Phase Meanings</a>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- 8 Moon Phase Secrets -->
+    <section id="moon-phase-secrets" class="prose">
+      <span class="eyebrow">Meanings</span>
+      <h2>8 Moon Phase Secrets That Transform Your Love Life</h2>
+      <p>
+        Each moon phase carries unique relationship energy that can revolutionize how you connect with others. Understanding these lunar meanings gives you powerful insights into your romantic patterns and compatibility needs. These cosmic secrets will help you identify your ideal partner and strengthen your existing relationships through celestial wisdom.
+      </p>
+
+      <div class="grid grid-3">
+        <!-- New Moon -->
+        <article class="card">
+          <span class="chip">New Moon</span>
+          <h3 class="phase-title">Fresh Beginnings & Vision</h3>
+          <p class="muted">Initiators who bring optimism and renewal. Inspire growth and new chapters—balance novelty with stability.</p>
+        </article>
+        <!-- Waxing Crescent -->
+        <article class="card">
+          <span class="chip">Waxing Crescent</span>
+          <h3 class="phase-title">Nurtured Growth</h3>
+          <p class="muted">Patient builders who see potential. Support partners’ dreams; balance growth mindset with present acceptance.</p>
+        </article>
+        <!-- First Quarter -->
+        <article class="card">
+          <span class="chip">First Quarter</span>
+          <h3 class="phase-title">Action & Problem-Solving</h3>
+          <p class="muted">Decisive leaders who tackle challenges early. Pair urgency with empathy for emotional processing.</p>
+        </article>
+        <!-- Waxing Gibbous -->
+        <article class="card">
+          <span class="chip">Waxing Gibbous</span>
+          <h3 class="phase-title">Refinement & Devotion</h3>
+          <p class="muted">Thoughtful improvers with eye for detail. Allow room for imperfection to keep love fluid and playful.</p>
+        </article>
+        <!-- Full Moon -->
+        <article class="card">
+          <span class="chip">Full Moon</span>
+          <h3 class="phase-title">Intensity & Intuition</h3>
+          <p class="muted">Deep feelers with powerful insight. Trust intuition and pace intensity to match your partner’s capacity.</p>
+        </article>
+        <!-- Waning Gibbous -->
+        <article class="card">
+          <span class="chip">Waning Gibbous</span>
+          <h3 class="phase-title">Wisdom & Care</h3>
+          <p class="muted">Natural mentors who help love grow through lessons. Offer guidance gently and listen as much as you teach.</p>
+        </article>
+        <!-- Last Quarter -->
+        <article class="card">
+          <span class="chip">Last Quarter</span>
+          <h3 class="phase-title">Release & Renewal</h3>
+          <p class="muted">Courage to end what no longer serves. Create space for healthier patterns and authentic connection.</p>
+        </article>
+        <!-- Waning Crescent -->
+        <article class="card">
+          <span class="chip">Waning Crescent</span>
+          <h3 class="phase-title">Peace & Meaning</h3>
+          <p class="muted">Spiritual closers who find purpose in every chapter. Balance inner reflection with present-moment presence.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="matching-phases" class="prose">
+      <span class="eyebrow">Myth vs Reality</span>
+      <h2>Do Matching Moon Phases Really Mean You're Soulmates?</h2>
+      <p>
+        Many people believe that sharing the same moon phase automatically guarantees soulmate status with their partner. This romantic notion sounds appealing but oversimplifies the complex nature of cosmic compatibility. The truth about lunar connections goes much deeper than simple matching.
+      </p>
+      <p>
+        Rather than seeking perfect lunar matches, focus on finding partners whose moon phase energy complements your relationship goals. Same-phase couples share similar emotional rhythms while opposite-phase partnerships experience intense attraction through contrasting energies. Your individual growth stage and relationship readiness matter more than astronomical alignment alone.
+      </p>
+    </section>
+
+    <section id="wedding-timing" class="prose">
+      <span class="eyebrow">Timing</span>
+      <h2>Can You Plan a Relationship or Wedding by the Moon?</h2>
+      <p>
+        Lunar timing can add powerful symbolic meaning to your most important relationship milestones. Planning proposals during New Moon phases harness fresh beginning energy while Full Moon engagements amplify emotional intensity. 
+      </p>
+      <p>
+        Each moon phase carries distinct energetic signatures that enhance different types of romantic moments perfectly.
+      </p>
+    </section>
+
+    <section id="start-now" class="prose">
+      <span class="eyebrow">Next Step</span>
+      <h2>Your Cosmic Love Journey Starts Now</h2>
+      <p>
+        Understanding lunar influences empowers you to recognize compatibility patterns and navigate relationship challenges with cosmic wisdom. Your moon phase reveals profound insights about how you love and connect with others. 
+      </p>
+      <p>
+        Start exploring your moon phase compatibility today and discover the celestial secrets that will transform your love life forever.
+      </p>
+      <div class="actions">
+        <a class="btn" href="https://moonphasesoulmates.com/" target="_blank" rel="noopener">Discover Your Lunar Match</a>
+        <span class="kbd" aria-hidden="true">Tip: Press <b>/</b> to search</span>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <strong>Made with cosmic care.</strong>
+        <div class="muted">A gentle, accessible layout with dark-mode first design.</div>
+      </div>
+      <a class="btn secondary" href="#introduction" aria-label="Back to top">Back to Top ↑</a>
+    </footer>
+  </div>
+
+  <!-- Optional: tiny search (client-side, no external deps) -->
+  <script>
+    (function(){
+      const k = 191; // '/'
+      let box;
+      function createBox(){
+        if(box) return box;
+        box = document.createElement('input');
+        box.setAttribute('type','search');
+        box.setAttribute('placeholder','Search this page…');
+        box.style.position='fixed';
+        box.style.top='18px';
+        box.style.right='18px';
+        box.style.zIndex='999';
+        box.style.padding='10px 12px';
+        box.style.border='1px solid rgba(255,255,255,.18)';
+        box.style.borderRadius='10px';
+        box.style.background='rgba(12,16,36,.9)';
+        box.style.color='#e6ecff';
+        box.style.width='min(320px, 80vw)';
+        box.className='shadow';
+        document.body.appendChild(box);
+        box.addEventListener('input', () => {
+          const q = box.value.trim().toLowerCase();
+          document.querySelectorAll('section').forEach(sec=>{
+            sec.style.opacity = q && !sec.textContent.toLowerCase().includes(q) ? .25 : 1;
+          });
+        });
+        return box;
+      }
+      document.addEventListener('keydown', (e)=>{
+        if(e.keyCode===k && !/input|textarea|select/i.test(document.activeElement.tagName)){
+          e.preventDefault();
+          const el = createBox();
+          el.focus(); el.select();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
